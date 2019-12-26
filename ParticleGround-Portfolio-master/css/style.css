@@ -63,29 +63,37 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.button {
-  background-color: #4CAF50; /* Green */
+button {
+  position: relative;
+  background-color: #0CBD37; /* Green */
   border: none;
   color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+/*display: inline-block;*/
   font-size: 16px;
   font-family: 'Montserrat', sans-serif;
+  margin: auto;
 
 }
 
 
 .footer {
-  position: fixed;
+  /*position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
   height: 20px;
   background-color: #000010;
   color: white;
-  text-align: center;
+  text-align: center; */
+
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 2.0rem;
+  text-align: -webkit-center;
 }
 
 #particles {
@@ -103,6 +111,8 @@ body {
   text-align: center;
   height: fit-content;
 }
+
+
 #introCard{
   position: absolute;
   left: 0;
@@ -155,6 +165,23 @@ p {
   #intro {
     padding: 0 10px;
   }
+
+  #introCard{
+  padding: 0 50px;
+  height: 300px;
+  }
+
+  button {
+    position: relative;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    /*display: inline-block;*/
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    margin: auto;
+
+  }
   h1 {
     font-size: 15px;
   }
@@ -166,6 +193,9 @@ p {
   }
   .btn {
     font-size: 16px;
+  }
+  footer{
+    height: 2.0rem;
   }
 }
 
