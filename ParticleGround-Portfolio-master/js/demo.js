@@ -20,6 +20,10 @@ function calCard(){
 
 }
 
+function gotoProjects() {
+  window.open("ProjectInfo.html")
+}
+
 /*
 // jQuery plugin example:
 $(document).ready(function() {

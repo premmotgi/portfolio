@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    h1 {
+        text-transform: uppercase;
+        font-size: 6vw;
+        font-weight: 120;
+        color: #0f29bd;
+        letter-spacing: 0.05em;
+        border-color: #0F29BD;
+        outline: #0F29BD;
+        border-style: groove;
+        text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    }
+
+    h1:hover{
+        webkit-filter: blur(4px); /* Chrome, Safari, Opera */
+        filter: blur(4px);
+
+
+    }
+
+    img:hover {
+        webkit-filter: blur(4px); /* Chrome, Safari, Opera */
+        filter: blur(4px);
+    }
+
+    body {
+        margin: 0;
+        font-family: 'Montserrat', sans-serif;
+
+    }
+
+    .header {
+        text-align: center;
+        padding: 0.5cm;
+    }
+
+    /* Create two equal columns that floats next to each other */
+    .column {
+        float: left;
+        width: 50%;
+        padding: 10px;
+    }
+
+    .column img {
+        margin-top: 0px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .container {
+        position: relative;
+        text-align: center;
+    }
+    .container:hover{
+        webkit-filter: blur(4px); /* Chrome, Safari, Opera */
+        filter: blur(4px);
+
+    }
+
+    /* Centered text */
+    .centered {
+        position: absolute;
+        top: 55%;
+        left: 49%;
+        width: fit-content;
+        font-family: 'Montserrat', sans-serif;
+        transform: translate(-50%, -50%);
+        font-size: 3.25vw;
+        margin: auto;
+        font-weight: bolder;
+    }
+
+    .overlay {
+        height: 100%;
+        width: 100%;
+        display: none;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0, 0.95);
+    }
+
+    .overlay-content {
+        position: relative;
+        top: 10%;
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .overlay a {
+        padding: 8px;
+        text-decoration: none;
+        font-size: 36px;
+        color: #434343;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .overlay a:hover, .overlay a:focus {
+        color: #f1f1f1;
+    }
+
+    .overlay .closebtn {
+        position: absolute;
+        top: 20px;
+        right: 45px;
+        font-size: 60px;
+    }
+
+    @media screen and (max-height: 450px) {
+        .overlay a {font-size: 20px}
+        .overlay .closebtn {
+            font-size: 40px;
+            top: 15px;
+            right: 35px;
+        }
+    }
+
+
+    ul,ol,dl,p {
+        font-size: 1.5vw;
+        text-align: left;
+        color: #f1f1f1;
+    }
+
+
+</style>
+<body>
+
+<!-- Header -->
+<div title="Click on any Project to know more." class="header">
+    <h1>Prem's work history</h1>
+</div>
+
+<!-- Photo Grid -->
+<div class="row">
+    <div class="column">
+        <img id="img1" src="assets/vodafone.png" onclick="openNav(this.id)" style="width:80%">
+        <br><br><br>
+        <img id ="img4" src="assets/IncidentAid.png"  onclick="openNav(this.id)" style="width:100%">
+        <br><br><br><br>
+        <img id ="img5" src="assets/answer.png"  onclick="openNav(this.id)" style="width:80%">
+        <br><br><br>
+        <a href="https://www.ijariit.com/manuscript/artificial-neural-networks-implementation-in-digital-games/"><img title="Click Here to visit Paper" id ="img7" src="assets/paper.png"  style="width:80%"></a>
+
+
+
+    </div>
+    <div class="column">
+        <img id ="img2" src="assets/Fedex.png" onclick="openNav(this.id)" style="width:80%">
+        <div class="container">
+            <img id ="img3" src="assets/android.png" onclick="openNav(this.id)" style="width:90%">
+            <div  id ="img31" class="centered" onclick="openNav(this.id)">PU-LABS</div>
+        </div>
+        <br><br>
+        <img id ="img6" src="assets/product.png" onclick="openNav(id)" style="width:100% ">
+
+    </div>
+
+</div>
+
+
+
+<div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+
+        <p id="description"></p>
+
+    </div>
+</div>
+
+<script>
+
+    function openNav(id) {
+        document.getElementById("myNav").style.display = "block";
+        var nav = document.getElementById("description");
+        if(id.toString() == "img1"){
+            nav.innerHTML = getTextForCompany("vodafone");
+        }else if(id.toString() == "img2"){
+            nav.innerHTML = getTextForCompany("fedex");
+
+        }else if(id.toString() === "img4"){
+            nav.innerHTML = getTextForCompany("incident");
+
+        }else if(id.toString() === "img6"){
+            nav.innerHTML = getTextForCompany("product");
+
+        }else if(id.toString() === 'img3' || id.toString() === 'img31'){
+            nav.innerHTML = getTextForCompany("pulabs");
+
+        }else if(id.toString() === 'img5'){
+            nav.innerHTML = getTextForCompany("answer");
+
+        }
+    }
+
+    function closeNav() {
+        document.getElementById("myNav").style.display = "none";
+    }
+
+
+    function getTextForCompany(company){
+        var strCode =  "";
+
+        if(company === "vodafone"){
+
+
+            strCode += "<ul>At Vodafone: (Jul 2017 - Aug 2019)<br>\n" +
+                "  <br><li>Wrote highly distributed, scalable RESTful APIs in Java for Vodafone Identification system that formed core gateway and has won consistent praise from subsequent developers since initial version</li><br>\n" +
+                "  <li>Researched, designed and implemented scalable Blockchain Solution to achieve the highest level of authentication using Block chain utilizing RabbitMQ for asynchronous messaging</li><br>\n" +
+                "  <li>Implemented micro service architecture using RESTful APIs to remove server-side state synchronization logic</li><br>\n" +
+                "  <li>Implemented automated testing framework in Cucumber for functional testing system that boosted testing case execution by 80%\n</li><br>\n" +
+                "  <li>Resolved Production level technological issues for assigned projects, increasing customer satisfaction to 100%</li><br>\n" +
+                "  <li>Assisted in Implementation of CI/CD which resulted in mitigation of risks associated with updating code in large infrequent releases along</li><br>\n" +
+                "  <li>Collaborated in agile team with UI/UX designers, Product owners and architects and enhanced User Interface utilizing Design thinking approach and provided inputs whenever found any issues.</li><br>\n" +
+                "</ul>\n" +
+                "\n";
+
+
+
+
+        }else if( company === "fedex"){
+
+            strCode += "<ul>At FedEx Project with Atos-Syntel: (Dec 2016 - Feb 2017)<br>\n" +
+                "  <br><li>Collaborated with developers and designers to reduce time complexity and identify performance bottlenecks</li><br>\n" +
+                "  <li>Applied Test Driven Development techniques, to mitigate recognized major issues in regression testing and bolstering efficiency by 80%</li><br>\n" +
+                "  <li>Strengthened code quality to 100% by introducing SonarQube open source code quality platform</li><br>\n" +
+                "  <li>Planned and developed appointed project using Java and JavaScript that simplified overall management and offered ease-of-use following agile development process</li><br>\n" +
+                "</ul>\n" +
+                "\n";
+
+        }else if( company === "incident"){
+
+        strCode += "<ul>At IncidentAid: (Oct 2019 - Present)<br>\n" +
+            "  <br><li>Doing Research and development of mission critical real time application with mission to support individual first respondent and humanitarian disaster relief in their efforts to save lives</li><br>\n" +
+            "  <li>Developing performance optimized Back-end Services using Spring Boot for android SDK which will result in minimal response time for every Incident rectification</li><br>\n" +
+            "</ul>\n" +
+            "\n";
+
+         }else if( company === "product"){
+
+            strCode += "<ul>Undergrad Senior Year Project: <br>\n" +
+                "  <br><li>Completed undergrad project based on research, and managed the implementation of hybrid recommendation algorithms, providing precise recommendation to customers of the shopping mall</li><br>\n" +
+                "  <li>Formed hybrid algorithm for recommendation which worked on 50% less data and more accurate recommendations resulting in Best Project Award at University under Innovation in Data Mining Projects</li><br>\n" +
+                "  <li>Achievement: Award winning project In the domain of Data-Mining Web Applications in College.</li><br>\n" +
+
+                "</ul>\n" +
+                "\n";
+
+        }else if(company === "pulabs"){
+
+            strCode += "<ul>Undergrad Sophomore Year Project:<br>\n" +
+                "  <br><li>This is also an Android Based App that is made for the students of the Pune</li><br>\n" +
+                "  <li>University students who are seeking educational materials on just a wait of a click.</li><br>\n" +
+                "  <li>We have provided all the material necessary for study as well website of our own to the students.</li><br>\n" +
+                "</ul>\n" +
+                "\n";
+
+
+
+        }else if(company === "answer"){
+
+            strCode += "<ul>Diploma Senior Year Project:<br>\n" +
+                "  <br><li>Project Synopsis: An android app for enhancing calling features, this project is used to deal with\n" +
+                "            the calls that one cannot receive when busy.</li><br>\n" +
+                "  <li>It automatically rejects call and provides respective\n" +
+                "        message.</li><br>\n" +
+                "</ul>\n" +
+                "\n";
+
+
+
+        }
+
+
+        return strCode;
+
+    }
+
+</script>
+
+
+</body>
+</html>
