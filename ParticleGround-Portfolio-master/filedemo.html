@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+<h1>The XMLHttpRequest Object</h1>
+
+<button type="button" onclick="loadXMLDoc()">Request data</button>
+
+<p id="demo"></p>
+
+
+<script>
+    function loadXMLDoc() {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                myFunction(this);
+            }
+        };
+        xmlhttp.open("GET", "http://localhost:8080/with-cors", true);
+        xmlhttp.send();
+    }
+    function myFunction(xml) {
+        var i;
+        var jsObj = JSON.parse( xml.response);
+        document.getElementById("demo").innerHTML = jsObj.msg;
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+    *, *:before, *:after{
+        margin: 0;
+        padding: 0;
+        direction: ltr;
+        box-sizing: border-box;
+    }
+    html{
+        font-size: 16px;
+        line-height: 1.8;
+    }
+    .ArticleCopy{
+        font-family: "Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
+        width: 80%;
+        margin:0 auto;
+        border: 1px solid #ddd;
+        padding: 3rem;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+    }
+    .ArticleCopy p {
+        text-rendering: optimizeLegibility;
+    }
+    .ArticleCopy blockquote {
+        border-radius: 3px;
+        position: relative;  /*  <--- */
+        font-style: italic;
+        text-align: center;
+        padding: 1rem 1.2rem;
+        width: 80%;  /* create space for the quotes */
+        color: #4a4a4a;
+        margin: 1rem auto 2rem;
+        color: #4a4a4a;
+        background: #E8E8E8;
+    }
+    /* -- create the quotation marks -- */
+    .ArticleCopy blockquote:before,
+    .ArticleCopy blockquote:after{
+        font-family: FontAwesome;
+        position: absolute;
+        /* -- inside the relative position of blockquote -- */
+        top: 13px;
+        color: #E8E8E8;
+        font-size: 34px;
+
+    }
+    .ArticleCopy blockquote:before{
+        content: "\f10d";
+        margin-right: 13px;
+        right: 100%;
+    }
+    .ArticleCopy blockquote:after{
+        content: "\f10e";
+        margin-left: 13px;
+        left: 100%;
+        top: auto;
+        bottom: 13px;
+    }
+
+    .titlestyle {
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        font-size: 2vw;
+        font-weight: 120;
+        letter-spacing: 0.05em;
+        padding-bottom: 10px;
+        color: black;
+    }
+
+    a {
+        text-decoration: none;
+        display: inline-block;
+        padding: 10px 20px;
+        font-palette: dark;
+        font-weight: bolder;
+        font-family: 'Montserrat', sans-serif;
+
+    }
+
+    a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    .previous {
+        background-color: #f1f1f1;
+        color: black;
+    }
+
+
+    .round {
+        border-radius: 50%;
+    }
+</style>
+
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <title>Goal Statement</title>
+    <link rel="shortcut icon" type="image/png" href="assets/peace.png">
+
+</head>
+<body>
+<a href="IdentityCard.html" class="previous round"><h2>&#8592;</h2></a>
+
+<section class="ArticleCopy">
+    <p class="titlestyle">Professional Summary:</p>
+    <blockquote>
+        <p>"Skilled Software Engineer with over 2.5 years of experience in developing new or optimizing existing applications, in a variety of
+            industries. Extensive experience in front- and back-end technologies, developing web services that enhance the efficiency of the firmware
+            development organization, and preparing and delivering reports and presentations to groups of various sizes to provide effective
+            recommendations. Continually exceeds expectations by building strong relationships and works well with people at all levels of the
+            organization, including stakeholders, customers, and teammates."</p>
+    </blockquote>
+</section>
+</body>
+
+
+</html>
