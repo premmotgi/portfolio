@@ -37,8 +37,24 @@
 </div>
 
 <div class="footer">
-  <p>Created and Deployed in 2019, Maintained by Prem Motgi. Hosted On- Netlify Container</p>
+  <p>Created and Deployed in 2019, Maintained by Prem Motgi. Hosted On- AWS EC2</p>
 </div>
 </body>
+
+<script>
+
+  function is_touch_device() {
+    try {
+      document.createEvent("TouchEvent");
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+  if (!is_touch_device()) {
+    document.write('<iframe id="ytplayer" type="text/html" width="480" height="360" src="https://www.youtube.com/embed/0pThnRneDjw" style="position: absolute ;bottom: 0;right: 0" frameborder="0" allowfullscreen> </iframe>');
+  }
+</script>
+
 
 </html>
