@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+	<html>
+
+    <style>
+        body{background:#e6e6e6;}
+    </style>
+	<head>
+	    <meta charset="utf-8">
+		<title>Descriptions Video Embed Demo</title>
+		<script src="https://cdn.zinggrid.com/zinggrid.min.js" defer></script>
+	</head>
+	<body>
+		<zing-grid
+			data='[ 
+					{
+						"Description": "Introduction of Mine",
+						"video": "https://www.youtube.com/embed/E5Rw2dNBEU0"
+					},
+					{
+						"Description": "Pitch Competition, IncidentAid @Frugal Innovation Hub(SCU)",
+						"video": "https://www.youtube.com/embed/Ppu1ZQpW70A"
+					}
+				]'>
+			<zg-column index="Description"></zg-column>
+			<zg-column index="video" type="iframe"></zg-column>
+		</zing-grid>
+	</body>
+</html>
